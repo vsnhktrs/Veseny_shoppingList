@@ -20,7 +20,9 @@ public class ConsoleUI {
             try {
                 response = scanner.nextInt();
                 actions.get(response).execute();
-            } catch (Exception e) {
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception f) {
                 System.out.println("Error! Please try again.");
             }
         }
