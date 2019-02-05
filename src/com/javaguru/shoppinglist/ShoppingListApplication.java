@@ -19,6 +19,5 @@ class ShoppingListApplication {
 
         ConsoleUI ui = new ConsoleUI(actions);
         ui.start();
-        //342423423
     }
 }
