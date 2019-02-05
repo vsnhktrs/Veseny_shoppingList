@@ -22,8 +22,7 @@ public class CreateProductAction implements Action {
         String name = scanner.nextLine();
 
         if (name.length() < 3 || name.length() > 32) {
-            System.out.println("Product name must be at least 3 symbols, and not mote then 32 symbols");
-            return;
+            throw new IllegalArgumentException("Product name must be at least 3 symbols, and not mote then 32 symbols");
         }
 
         System.out.println("Enter product price: ");
@@ -31,8 +30,7 @@ public class CreateProductAction implements Action {
 
         BigDecimal zero = new BigDecimal(0);
         if (new BigDecimal(price).compareTo(zero) <= 0) {
-            System.out.println("Price must more then 0");
-            return;
+            throw new IllegalArgumentException("Price must more then 0");
         }
 
         System.out.println("Enter product category");
@@ -45,8 +43,7 @@ public class CreateProductAction implements Action {
         double discount = scanner.nextDouble();
 
         if (discount > 100) {
-            System.out.println("Discount can't be more then 100%");
-            return;
+            throw new IllegalArgumentException("Discount can't be more then 100%");
         }
 
         Product product = new Product();
