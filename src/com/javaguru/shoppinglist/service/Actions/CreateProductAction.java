@@ -1,4 +1,4 @@
-package com.javaguru.shoppinglist.service;
+package com.javaguru.shoppinglist.service.Actions;
 
 import com.javaguru.shoppinglist.domain.Product;
 import java.math.BigDecimal;
@@ -20,7 +20,6 @@ public class CreateProductAction implements Action {
         Scanner scanner = new Scanner(System.in);
 
         try {
-
             System.out.println("Enter product name:");
             String name = scanner.nextLine();
 
@@ -43,14 +42,13 @@ public class CreateProductAction implements Action {
             product.setDescription(description);
             product.setDiscount(discount);
 
+            Long response = productService.create(product);
+            System.out.println("Response: " + response);
 
-                Long response = productService.create(product);
-                System.out.println("Response: " + response);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
+    }
 
     @Override
     public String toString() {

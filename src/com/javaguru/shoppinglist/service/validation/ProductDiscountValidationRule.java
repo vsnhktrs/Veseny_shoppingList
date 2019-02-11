@@ -10,6 +10,5 @@ public class ProductDiscountValidationRule implements ProductValidationRule {
         if (product.getDiscount() > 100) {
             throw new IllegalArgumentException("Discount can't be more then 100%");
         }
-
     }
 }

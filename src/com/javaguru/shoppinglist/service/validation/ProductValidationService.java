@@ -8,14 +8,13 @@ public class ProductValidationService {
 
     private Set<ProductValidationRule> validationRules = new HashSet<>();
 
-    public ProductValidationService(){
+    public ProductValidationService() {
         validationRules.add(new ProductNameValidationRule());
         validationRules.add(new ProductPriceValidationRule());
         validationRules.add(new ProductDiscountValidationRule());
     }
 
-    public void validate (Product product) {
+    public void validate(Product product) {
         validationRules.forEach(s -> s.validate(product));
     }
-
 }

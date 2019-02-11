@@ -10,10 +10,8 @@ public class ProductPriceValidationRule implements ProductValidationRule {
         BigDecimal zero = new BigDecimal(0);
         BigDecimal price = new BigDecimal(String.valueOf(product.getPrice()));
 
-
         if (new BigDecimal(String.valueOf(price)).compareTo(zero) <= 0) {
             throw new IllegalArgumentException("Price must more then 0");
         }
     }
-
 }
