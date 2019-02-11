@@ -1,5 +1,6 @@
-package com.javaguru.shoppinglist;
+package com.javaguru.shoppinglist.service;
 
+import com.javaguru.shoppinglist.domain.Product;
 import java.util.Scanner;
 
 public class FindProductByIdAction implements Action {
