@@ -1,4 +1,4 @@
-package com.javaguru.shoppinglist.service.Actions;
+package com.javaguru.shoppinglist.service.actions;
 
 import com.javaguru.shoppinglist.domain.Product;
 

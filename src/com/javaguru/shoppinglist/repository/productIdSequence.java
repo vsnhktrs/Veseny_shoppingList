@@ -4,12 +4,12 @@ import com.javaguru.shoppinglist.domain.Product;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProductRepository {
+public class productIdSequence {
 
     private Long TASK_ID_SEQUENCE = 0L;
     private Map<Long, Product> products = new HashMap<>();
 
-    public Product adding(Product product) {
+    public Product add(Product product) {
         product.setId(TASK_ID_SEQUENCE);
         products.put(TASK_ID_SEQUENCE, product);
         TASK_ID_SEQUENCE++;

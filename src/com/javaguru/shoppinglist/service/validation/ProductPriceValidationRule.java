@@ -7,11 +7,10 @@ public class ProductPriceValidationRule implements ProductValidationRule {
 
     @Override
     public void validate(Product product){
-        BigDecimal zero = new BigDecimal(0);
         BigDecimal price = new BigDecimal(String.valueOf(product.getPrice()));
 
-        if (new BigDecimal(String.valueOf(price)).compareTo(zero) <= 0) {
-            throw new IllegalArgumentException("Price must more then 0");
+        if (new BigDecimal(String.valueOf(price)).compareTo(BigDecimal.ZERO) <= 0) {
+            throw new ProductValidationException("Price must more then 0");
         }
     }
 }
