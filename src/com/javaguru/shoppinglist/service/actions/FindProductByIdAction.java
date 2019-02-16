@@ -1,11 +1,11 @@
-package com.javaguru.shoppinglist;
+package com.javaguru.shoppinglist.service.actions;
 
+import com.javaguru.shoppinglist.domain.Product;
 import java.util.Scanner;
 
 public class FindProductByIdAction implements Action {
 
     private static final String ACTION_NAME = "Find by ID";
-
     private final ProductService productService;
 
     public FindProductByIdAction(ProductService productService) {
