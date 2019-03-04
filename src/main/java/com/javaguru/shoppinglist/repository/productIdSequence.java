@@ -3,7 +3,9 @@ package com.javaguru.shoppinglist.repository;
 import com.javaguru.shoppinglist.domain.Product;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
+@Component
 public class productIdSequence {
 
     private Long TASK_ID_SEQUENCE = 0L;
