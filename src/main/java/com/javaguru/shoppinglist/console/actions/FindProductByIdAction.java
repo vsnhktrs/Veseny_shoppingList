@@ -1,13 +1,15 @@
-package com.javaguru.shoppinglist.service.actions;
+package com.javaguru.shoppinglist.console.actions;
 
 import com.javaguru.shoppinglist.domain.Product;
 import java.util.Scanner;
+import com.javaguru.shoppinglist.service.ProductService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FindProductByIdAction implements Action {
 
     private static final String ACTION_NAME = "Find by ID";
+
     private final ProductService productService;
 
     public FindProductByIdAction(ProductService productService) {
@@ -19,7 +21,7 @@ public class FindProductByIdAction implements Action {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id: ");
         Long id = scanner.nextLong();
-        Product response = productService.findBy(id);
+        Product response = productService.findProductById(id);
         System.out.println("Response: " + response);
     }
 

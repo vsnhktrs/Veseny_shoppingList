@@ -1,25 +1,34 @@
 package com.javaguru.shoppinglist.service;
 
 import com.javaguru.shoppinglist.domain.Product;
-import com.javaguru.shoppinglist.repository.productIdSequence;
-import com.javaguru.shoppinglist.service.actions.ProductService;
+import com.javaguru.shoppinglist.repository.ProductRepasitory;
 import com.javaguru.shoppinglist.service.validation.ProductValidationService;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@Component
+@Service
 public class DefaultProductService implements ProductService {
 
-    private productIdSequence repository = new productIdSequence();
-    private ProductValidationService validationService = new ProductValidationService();
+    private final ProductRepasitory repasitory;
+    private final ProductValidationService validationService;
 
-    public Long create(Product product) {
-        validationService.validate(product);
-        Product createdProduct = repository.add(product);
-        return createdProduct.getId();
+    @Autowired
+    public DefaultProductService(ProductRepasitory repasitory,
+                                 ProductValidationService validationService) {
+        this.repasitory = repasitory;
+        this.validationService = validationService;
     }
 
-    public Product findBy(Long id) {
-        return repository.findId(id);
+    @Transactional
+    public Long create(Product product) {
+        validationService.validate(product);
+        return repasitory.add(product);
+    }
+
+    public Product findProductById(Long id) {
+        return repasitory.findby(id)
+                .orElseThrow(() -> new IllegalArgumentException("Task not found, id: " + id));
     }
 }
 

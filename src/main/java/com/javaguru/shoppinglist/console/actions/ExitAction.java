@@ -1,5 +1,4 @@
-package com.javaguru.shoppinglist.service.actions;
-
+package com.javaguru.shoppinglist.console.actions;
 
 import org.springframework.stereotype.Component;
 
