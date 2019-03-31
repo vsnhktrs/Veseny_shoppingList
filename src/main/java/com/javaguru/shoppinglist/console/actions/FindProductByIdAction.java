@@ -1,7 +1,9 @@
 package com.javaguru.shoppinglist.console.actions;
 
 import com.javaguru.shoppinglist.domain.Product;
+
 import java.util.Scanner;
+
 import com.javaguru.shoppinglist.service.ProductService;
 import org.springframework.stereotype.Component;
 

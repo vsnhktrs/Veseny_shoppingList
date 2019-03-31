@@ -1,12 +1,12 @@
 package com.javaguru.shoppinglist.repository;
 
 import com.javaguru.shoppinglist.domain.Product;
+
 import java.util.Optional;
 
 public interface ProductRepasitory {
 
-    Long add(Product product);
+    Long insert(Product product);
 
-    Optional<Product> findby(Long id);
-
+    Optional<Product> findProductById(Long id);
 }

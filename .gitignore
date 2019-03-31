@@ -1,1 +1,26 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/dataSources/
+.idea/libraries/Maven__antlr_antlr_2_7_7.xml
+.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml
+.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml
+.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml
+.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml
+.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_4_Final.xml
+.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_5_Final.xml
+.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_3_5_Final.xml
+.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml
+.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml
+.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml
+.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_3_GA.xml
+.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml
+.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml
+.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_22_RELEASE.xml
+.idea/libraries/Maven__org_springframework_spring_orm_4_3_10_RELEASE.xml
+.idea/libraries/Maven__org_springframework_spring_tx_4_3_10_RELEASE.xml
+.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml
+.idea/sqldialects.xml
+.idea/workspace.xml
+devops/
+target/

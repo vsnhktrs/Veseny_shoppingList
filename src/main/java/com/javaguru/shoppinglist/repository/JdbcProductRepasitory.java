@@ -26,7 +26,7 @@ public class JdbcProductRepasitory implements ProductRepasitory {
     }
 
     @Override
-    public Long add(Product product) {
+    public Long insert(Product product) {
         String query = "insert into product (name, price, category, description, discount) values (" +
                 "?, ?, ?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -47,7 +47,7 @@ public class JdbcProductRepasitory implements ProductRepasitory {
     }
 
     @Override
-    public Optional<Product> findby(Long id) {
+    public Optional<Product> findProductById(Long id) {
         String query = "select * from product where id=" + id;
         List<Product> products = jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(Product.class));

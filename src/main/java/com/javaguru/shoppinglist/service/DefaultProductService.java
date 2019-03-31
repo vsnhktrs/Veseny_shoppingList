@@ -23,11 +23,11 @@ public class DefaultProductService implements ProductService {
     @Transactional
     public Long create(Product product) {
         validationService.validate(product);
-        return repasitory.add(product);
+        return repasitory.insert(product);
     }
 
     public Product findProductById(Long id) {
-        return repasitory.findby(id)
+        return repasitory.findProductById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Task not found, id: " + id));
     }
 }

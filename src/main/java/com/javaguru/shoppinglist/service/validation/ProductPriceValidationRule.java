@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class ProductPriceValidationRule implements ProductValidationRule {
 
     @Override
-    public void validate(Product product){
+    public void validate(Product product) {
         BigDecimal price = new BigDecimal(String.valueOf(product.getPrice()));
 
         if (new BigDecimal(String.valueOf(price)).compareTo(BigDecimal.ZERO) <= 0) {

@@ -13,7 +13,7 @@ public class ProductNameValidationRule implements ProductValidationRule {
 
         if (product.getName().length() < minNameLetters | product.getName().length() > maxNameLetters) {
             throw new ProductValidationException(
-                "Product name must have more then 3 and not more then 32 symbols");
+                    "Product name must have more then 3 and not more then 32 symbols");
         }
     }
 }

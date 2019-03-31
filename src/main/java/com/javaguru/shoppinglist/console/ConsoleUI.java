@@ -2,6 +2,7 @@ package com.javaguru.shoppinglist.console;
 
 import java.util.List;
 import java.util.Scanner;
+
 import com.javaguru.shoppinglist.console.actions.Action;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,9 @@ public class ConsoleUI {
     private final List<Action> actions;
 
     @Autowired
-    public ConsoleUI(List<Action> actions) {this.actions = actions;}
+    public ConsoleUI(List<Action> actions) {
+        this.actions = actions;
+    }
 
     public void start() {
         Scanner scanner = new Scanner(System.in);

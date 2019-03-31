@@ -15,6 +15,7 @@ public class CreateProductAction implements Action {
 
     private final ProductService productService;
 
+
     public CreateProductAction(ProductService productService) {
         this.productService = productService;
     }
@@ -38,6 +39,7 @@ public class CreateProductAction implements Action {
     }
 
     Scanner scanner = new Scanner(System.in);
+
 
     void getProductName(Product product) {
 

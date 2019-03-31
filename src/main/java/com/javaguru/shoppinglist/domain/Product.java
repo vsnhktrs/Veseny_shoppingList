@@ -1,13 +1,11 @@
 package com.javaguru.shoppinglist.domain;
 
-import org.hibernate.annotations.Table;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(appliesTo = "product")
+@Table(name = "product")
 public class Product {
 
     @Id
