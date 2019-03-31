@@ -3,7 +3,9 @@ package com.javaguru.shoppinglist.console;
 import com.javaguru.shoppinglist.service.actions.Action;
 import java.util.List;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ConsoleUI {
 
     private final List<Action> actions;

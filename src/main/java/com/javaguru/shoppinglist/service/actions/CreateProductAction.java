@@ -3,12 +3,15 @@ package com.javaguru.shoppinglist.service.actions;
 import com.javaguru.shoppinglist.domain.Product;
 import java.math.BigDecimal;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CreateProductAction implements Action {
 
     private static final String ACTION_NAME = "Create Product";
 
     private final ProductService productService;
+
 
     public CreateProductAction(ProductService productService) {
         this.productService = productService;
