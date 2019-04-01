@@ -11,6 +11,5 @@ class ShoppingListApplication {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ConsoleUI console = context.getBean(ConsoleUI.class);
         console.start();
-
     }
 }

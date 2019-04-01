@@ -1,8 +1,11 @@
-package com.javaguru.shoppinglist.service.actions;
+package com.javaguru.shoppinglist.console.actions;
 
 import com.javaguru.shoppinglist.domain.Product;
+
 import java.math.BigDecimal;
 import java.util.Scanner;
+
+import com.javaguru.shoppinglist.service.ProductService;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,7 +25,7 @@ public class CreateProductAction implements Action {
 
         Product product = new Product();
 
-        getProdutName(product);
+        getProductName(product);
         getProductPrice(product);
         getProductCategory(product);
         getProductDescription(product);
@@ -37,13 +40,14 @@ public class CreateProductAction implements Action {
 
     Scanner scanner = new Scanner(System.in);
 
-    void getProdutName(Product product) {
+
+    void getProductName(Product product) {
 
         try {
             System.out.println("Enter product name:");
             String name = scanner.nextLine();
             product.setName(name);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
@@ -55,10 +59,9 @@ public class CreateProductAction implements Action {
             String price = scanner.nextLine();
             product.setPrice(new BigDecimal(price));
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     void getProductCategory(Product product) {
@@ -75,21 +78,17 @@ public class CreateProductAction implements Action {
 
     void getProductDiscount(Product product) {
 
-        try{
+        try {
             System.out.println("Enter product discount");
             double discount = scanner.nextDouble();
             product.setDiscount(discount);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
-
 
     @Override
     public String toString() {
         return ACTION_NAME;
     }
-
-
 }

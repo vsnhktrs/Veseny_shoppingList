@@ -1,15 +1,26 @@
 package com.javaguru.shoppinglist.domain;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Entity
+@Table(name = "products")
 public class Product {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "category")
     private String category;
+    @Column(name = "description")
     private String description;
+    @Column(name = "discount")
     private double discount;
 
     public Long getId() {
@@ -70,11 +81,11 @@ public class Product {
         }
         Product product = (Product) o;
         return Objects.equals(id, product.id) &&
-            Objects.equals(name, product.name) &&
-            Objects.equals(price, product.price) &&
-            Objects.equals(category, product.category) &&
-            Objects.equals(discount, product.discount) &&
-            Objects.equals(description, product.description);
+                Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(category, product.category) &&
+                Objects.equals(discount, product.discount) &&
+                Objects.equals(description, product.description);
     }
 
     @Override
@@ -85,12 +96,12 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", price=" + price +
-            ", category='" + category + '\'' +
-            ", discount=" + discount + "%" +
-            ", description='" + description + '\'' +
-            '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", category='" + category + '\'' +
+                ", discount=" + discount + "%" +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

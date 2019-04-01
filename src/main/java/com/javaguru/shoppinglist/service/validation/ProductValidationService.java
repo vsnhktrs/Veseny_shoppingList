@@ -1,9 +1,12 @@
 package com.javaguru.shoppinglist.service.validation;
 
 import com.javaguru.shoppinglist.domain.Product;
+import org.springframework.stereotype.Service;
+
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class ProductValidationService {
 
     private Set<ProductValidationRule> validationRules = new HashSet<>();
@@ -18,3 +21,5 @@ public class ProductValidationService {
         validationRules.forEach(s -> s.validate(product));
     }
 }
+
+
