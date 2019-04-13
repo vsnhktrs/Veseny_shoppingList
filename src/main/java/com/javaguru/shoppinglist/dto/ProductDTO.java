@@ -11,6 +11,8 @@ public class ProductDTO {
     private String description;
     private double discount;
 
+    public ProductDTO(){}
+
     public ProductDTO(Long id, String name, BigDecimal price, String category, String description, double discount) {
         this.id = id;
         this.name = name;

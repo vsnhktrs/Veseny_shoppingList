@@ -1,13 +1,14 @@
 package com.javaguru.shoppinglist.repository;
 
 import com.javaguru.shoppinglist.domain.Product;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Repository
@@ -33,5 +34,23 @@ public class HibernateProductRepository implements ProductRepasitory {
         Product product = (Product) sessionFactory.getCurrentSession().createCriteria(Product.class)
                 .add(Restrictions.eq("id", id)).uniqueResult();
         return Optional.ofNullable(product);
+    }
+
+    @Override
+    public Long delete(Long id) {
+        Session session;
+        Product product;
+
+        session = sessionFactory.getCurrentSession();
+        product = (Product) session.load(Product.class, id);
+        session.delete(product);
+        session.flush();
+        return product.getId();
+    }
+
+    @Override
+    public Long update(Product product) {
+        sessionFactory.getCurrentSession().update(product);
+        return product.getId();
     }
 }

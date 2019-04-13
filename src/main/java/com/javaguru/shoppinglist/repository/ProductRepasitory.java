@@ -9,4 +9,8 @@ public interface ProductRepasitory {
     Long insert(Product product);
 
     Optional<Product> findProductById(Long id);
+
+    Long delete(Long id);
+
+    Long update(Product product);
 }

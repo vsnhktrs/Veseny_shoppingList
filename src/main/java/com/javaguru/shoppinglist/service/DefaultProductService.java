@@ -30,5 +30,16 @@ public class DefaultProductService implements ProductService {
         return repasitory.findProductById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Task not found, id: " + id));
     }
+
+    @Transactional
+    public Long delete(Long id) {
+        return repasitory.delete(id);
+    }
+
+    @Transactional
+    public Long update(Product product) {
+        validationService.validate(product);
+        return repasitory.update(product);
+    }
 }
 

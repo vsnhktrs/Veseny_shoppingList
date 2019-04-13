@@ -7,4 +7,8 @@ public interface ProductService {
     Long create(Product product);
 
     Product findProductById(Long id);
+
+    Long delete(Long id);
+
+    Long update(Product product);
 }
